@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+header {
+    font-family: 'Roboto';
+}
+.email {
+    height: 40px;
+    background-color: rgb(242, 242, 242);
+}
+.media {
+    height: 40px;
+    background-color: rgba(0, 158, 231);
+}
+.fab {
+    color: white;
+}
