@@ -4,16 +4,65 @@ html, body {
     margin: 0px;
 }
 header {
-    font-family: 'Roboto';
-}
-.email {
-    height: 40px;
+    display: grid;
+    grid-template: repeat(2, 40px) / 1fr;
+    grid-template-areas:
+    "email"
+    "media";
+    font-family: 'Roboto', sans-serif;
+    vertical-align: middle;
+    text-align: center;
     background-color: rgb(242, 242, 242);
 }
+.email {
+    grid-area: "email";
+    font-size: 14px;
+    padding-top: 10px;
+    color: rgb(57, 57, 57);
+}
 .media {
-    height: 40px;
+    grid-area: "media";
+    padding-top: 10px;
     background-color: rgba(0, 158, 231);
+    margin: 0px 20px;
 }
 .fab {
     color: white;
+    margin: auto 16px;
+}
+.fab:hover {
+    color: black;
+    cursor: pointer;
+}
+@media screen and (min-width:768px) {
+    header {
+        grid-template: 40px / 72% 28%;
+        grid-template-areas:
+        "email media";
+    }
+    .email {
+        text-align: left;
+        padding-left: 20px;
+    }
+    .media {
+        margin: 0px;
+        text-align: right;
+        padding-right: 20px;
+    }
+}
+@media screen and (min-width:1170px) {
+    header {
+        grid-template: 40px / 75% 25%;
+        grid-template-areas:
+        "email media";
+    }
+    .email {
+        text-align: left;
+        padding-left: 25px;
+    }
+    .media {
+        margin: 0px;
+        text-align: right;
+        padding-right: 20px;
+    }
 }
