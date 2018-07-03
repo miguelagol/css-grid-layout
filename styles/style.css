@@ -2,6 +2,8 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 header {
     display: grid;
@@ -9,7 +11,6 @@ header {
     grid-template-areas:
     "email"
     "media";
-    font-family: 'Roboto', sans-serif;
     vertical-align: middle;
     text-align: center;
     background-color: rgb(242, 242, 242);
@@ -34,6 +35,58 @@ header {
     color: black;
     cursor: pointer;
 }
+.menu {
+    text-align: center;
+}
+.logo {
+    margin: 25px auto;
+}
+.visible_menu {
+    display: grid;
+    grid-template: 40px / minmax(min-content, 1fr) min-content;
+    grid-template-areas:
+    "menu list";
+    margin: 0px 20px;
+    font-size: 13px;
+    color: rgb(57, 57, 57);
+    position: relative;
+}
+.menu_left {
+    border: 1px solid rgb(218, 218, 218);
+    text-align: left;
+    padding: 10px 20px;
+}
+.menu_right {
+    border: 1px solid rgb(218, 218, 218);
+    text-align: left;
+    padding: 12px 18px;
+}
+.fa-bars {
+    color: rgb(197, 197, 197);
+    transform: scale(1.8);
+}
+.hidden_menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -40px;
+    width: 100%;
+    margin: 0px 0px;
+}
+.hidden_menu li {
+    list-style: none;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    background-color: rgb(233, 233, 233);
+}
+.current {
+    color: rgba(0, 158, 231);
+}
+.visible_menu:hover .hidden_menu {
+    display: block;
+}
 @media screen and (min-width:768px) {
     header {
         grid-template: 40px / 72% 28%;
@@ -49,6 +102,46 @@ header {
         text-align: right;
         padding-right: 20px;
     }
+}
+@media screen and (min-width:1045px) {
+    header {
+        grid-template: 40px / 72% 28%;
+        grid-template-areas:
+        "email media";
+    }
+    .email {
+        text-align: left;
+        padding-left: 20px;
+    }
+    .media {
+        margin: 0px;
+        text-align: right;
+        padding-right: 20px;
+    }
+    .menu {
+        text-align: left;
+        margin-left: 20px;
+        position: relative;
+    }
+    .visible {
+        display: none;
+    }
+    .hidden_menu {
+        display: block;
+        position: fixed;
+        top: 72px;
+        left: 300px;
+        margin: 0px 0px;
+    }
+    .hidden_menu li {
+        width: 70px;
+        float: left;
+        border-bottom: none;
+        background-color: white;
+    }
+    .current {
+        color: rgba(0, 158, 231);
+    } 
 }
 @media screen and (min-width:1170px) {
     header {
