@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    width: 100%;
+    min-width: 402px;
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
@@ -37,41 +37,11 @@ header {
 }
 .menu {
     text-align: center;
+    margin-bottom: 8px;
+    background-color: white;
 }
 .logo {
-    margin: 25px auto;
-}
-.visible_menu {
-    display: grid;
-    grid-template: 40px / minmax(min-content, 1fr) min-content;
-    grid-template-areas:
-    "menu list";
-    margin: 0px 20px;
-    font-size: 13px;
-    color: rgb(57, 57, 57);
-    position: relative;
-}
-.menu_left {
-    border: 1px solid rgb(218, 218, 218);
-    text-align: left;
-    padding: 10px 20px;
-}
-.menu_right {
-    border: 1px solid rgb(218, 218, 218);
-    text-align: left;
-    padding: 12px 18px;
-}
-.fa-bars {
-    color: rgb(197, 197, 197);
-    transform: scale(1.8);
-}
-.hidden_menu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: -40px;
-    width: 100%;
-    margin: 0px 0px;
+    margin: 27px auto 20px auto;
 }
 .hidden_menu li {
     list-style: none;
@@ -81,11 +51,45 @@ header {
     border-bottom: 1px solid rgb(197, 197, 197);
     background-color: rgb(233, 233, 233);
 }
-.current {
+.current,  .hidden_menu li:hover {
     color: rgba(0, 158, 231);
 }
-.visible_menu:hover .hidden_menu {
-    display: block;
+@media screen and (max-width:1044px) {
+    .visible_menu {
+        display: grid;
+        grid-template: 40px / minmax(min-content, 1fr) min-content;
+        grid-template-areas:
+        "menu list";
+        margin: 0px 20px;
+        font-size: 13px;
+        color: rgb(57, 57, 57);
+        position: relative;
+    }
+    .menu_left {
+        border: 1px solid rgb(218, 218, 218);
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .menu_right {
+        border: 1px solid rgb(218, 218, 218);
+        text-align: left;
+        padding: 12px 18px;
+    }
+    .fa-bars {
+        color: rgb(197, 197, 197);
+        transform: scale(1.8);
+    }
+    .visible_menu:hover .hidden_menu {
+        display: block;
+    }
+    .hidden_menu {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: -40px;
+        width: 100%;
+        margin: 0px 0px;
+    }
 }
 @media screen and (min-width:768px) {
     header {
@@ -119,29 +123,106 @@ header {
         padding-right: 20px;
     }
     .menu {
-        text-align: left;
-        margin-left: 20px;
-        position: relative;
+        margin: 0px;
+    }
+    .logo {
+        margin: 0px;
+        padding: 23px 20px;
+        float: left;
     }
     .visible {
         display: none;
     }
     .hidden_menu {
-        display: block;
+        display: grid;
+        grid-template: 100px / repeat(9, minmax(min-content, 1fr)) ;
+        grid-template-areas:
+        "home themes about blog showcase support cart contact login";
+        padding: 0px;
+        margin: 0px;
+        min-width: 600px;
+        max-width: 700px;
         position: fixed;
-        top: 72px;
-        left: 300px;
-        margin: 0px 0px;
+        right: 0px;
     }
     .hidden_menu li {
-        width: 70px;
         float: left;
+        padding: 44px 5px;
+        text-align: center;
         border-bottom: none;
         background-color: white;
     }
-    .current {
-        color: rgba(0, 158, 231);
-    } 
+    .home {
+        grid-area: "home";
+    }
+    .themes {
+        grid-area: "themes";
+    }
+    .about {
+        grid-area: "about";
+    }
+    .blog {
+        grid-area: "blog";
+    }
+    .showcase {
+        grid-area: "showcase";
+    }
+    .cart {
+        grid-area: "cart";
+    }
+    .contact {
+        grid-area: "contact";
+    }
+    .login {
+        grid-area: "login";
+    }
+    /* .menu {
+        display: grid;
+        grid-template: 100px / 1fr min-width;
+        grid-template-areas:
+        "logo hidden";
+    }
+    .logo {
+        grid-area: "logo";
+        margin: 0px;
+    }
+    .hidden_menu {
+        display: grid;
+        grid-template: 220px / repeat(9, minmax(min-content, 1fr)) ;
+        grid-template-areas:
+        "home themes about blog showcase support cart contact login";
+        grid-area: "hidden";
+        padding: 0px;
+    }
+    .hidden_menu li {
+        text-align: center;
+        border-bottom: none;
+        background-color: white;
+    }
+    .home {
+        grid-area: "home";
+    }
+    .themes {
+        grid-area: "themes";
+    }
+    .about {
+        grid-area: "about";
+    }
+    .blog {
+        grid-area: "blog";
+    }
+    .showcase {
+        grid-area: "showcase";
+    }
+    .cart {
+        grid-area: "cart";
+    }
+    .contact {
+        grid-area: "contact";
+    }
+    .login {
+        grid-area: "login";
+    } */
 }
 @media screen and (min-width:1170px) {
     header {
