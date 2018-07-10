@@ -3,56 +3,43 @@ html, body {
     min-width: 385px;
     margin: 0px;
     padding: 0px;
+    font-size: 14px;
     font-family: 'Roboto', sans-serif;
     color: rgb(57, 57, 57);
 }
-header .container{
+.container {
+    max-width: 1220px;
+    margin: 0px auto;
+    text-align: center;
+}
+header .container {
     display: grid;
     grid-template: repeat(2, 40px) / 1fr;
-    vertical-align: middle;
-    text-align: center;
     background-color: rgb(242, 242, 242);
 }
-.email {
-    font-size: 14px;
-    padding-top: 10px;
+header .container div {
+    padding: 11px 0px;
 }
 .media {
-    padding-top: 10px;
     background-color: rgb(0, 158, 231);
     margin: 0px 20px;
+    font-size: 16px;
 }
 .fab {
     color: white;
-    margin: auto 16px;
+    margin: auto 13px;
 }
 .fab:hover {
     color: black;
     cursor: pointer;
 }
-.container {
-    max-width: 1220px;
-    margin: 0px auto;
-}
 .menu {
-    text-align: center;
-    background-color: white;
     padding-top: 27px;
 }
-.logo img{
-    margin:0px auto;
-    text-align: center;
-}
-.hidden_menu li {
+li {
     list-style: none;
-    text-align: left;
-    font-size: 14px;
-    padding: 10px;
-    padding-bottom: 11px;
-    border-bottom: 1px solid rgb(197, 197, 197);
-    background-color: rgb(233, 233, 233);
 }
-.current, .hidden_menu li:hover, .fa, .far, .hover:hover h3 {
+.current, .dropdown_menu li:hover, .fa, .far, .feature:hover h3 {
     color: rgb(0, 158, 231);
     cursor: pointer;
 }
@@ -94,7 +81,6 @@ h2 {
     margin: 22px 0px;
     padding: 11px;
     width: 110px;
-    font-size: 14px;
     text-align: center;
     color: rgb(0, 158, 231);
     background-color: white;
@@ -103,7 +89,6 @@ h2 {
 .features .container {
     display: grid;
     grid-template: repeat(4, max-content) / 1fr;
-    text-align: center;
 }
 .features {
     margin: 85px 20px;
@@ -123,8 +108,7 @@ h3 {
     font-weight: 400;
     margin: 20px auto;
 }
-.hover div {
-    font-size: 14px;
+.feature div {
     line-height: 24px;
     margin: 0px;
 }
@@ -134,7 +118,6 @@ h3 {
 }
 .latest_themes {
     padding: 15px 0px;
-    text-align: center;
     background-color: rgb(242, 242, 242);
 }
 .latest_themes h1 {
@@ -183,18 +166,26 @@ h3 {
     right: 10px;
     transform: skewY(-60deg);
 }
+.testing {
+    height: 300px;
+    width: 300px;
+    background: red;
+}
+.testing_box {
+    height: 200px;
+    width: 200px;
+    padding: 50px;
+    background: red;
+}
 @media screen and (max-width: 478px) {
     .logo img{
-        margin: 0px auto;
         width: 63%;
-        text-align: center;
     }
 }
 @media screen and (min-width: 550px) {
     .latest_themes {
         width: 100%;
         padding: 15px 0px;
-        text-align: center;
         background-color: rgb(242, 242, 242);
     }
     .themes {
@@ -236,20 +227,98 @@ h3 {
         transform: skewY(-60deg);
     }
 }
+@media screen and (max-width:767px) {
+    .main_menu {
+        display: grid;
+        grid-template: 40px / minmax(min-content, 1fr) min-content;
+        margin: 0px 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 13px;
+        color: rgb(57, 57, 57);
+        position: relative;
+    }
+    .menu_left {
+        border: 1px solid rgb(218, 218, 218);
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .menu_right {
+        border: 1px solid rgb(218, 218, 218);
+        text-align: left;
+        padding: 12px 18px;
+    }
+    .fa-bars {
+        color: rgb(197, 197, 197);
+        transform: scale(1.8);
+    }
+    .main_menu:hover .dropdown_menu {
+        display: block;
+        z-index: 1;
+    }
+    .main_menu:hover {
+        margin-bottom: 350px;
+    }
+    .dropdown_menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: -40px;
+        width: 100%;
+        margin: 0px 0px;
+    }
+    .dropdown_menu li {
+        list-style: none;
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid rgb(197, 197, 197);
+        background-color: rgb(233, 233, 233);
+    }
+}
 @media screen and (min-width:768px) {
     header .container{
         grid-template: 40px / 72% 28%;
     }
-    .email {
+    header .container .email {
+        padding: 11px 20px;
         text-align: left;
-        padding-left: 20px;
     }
-    .media {
-        margin: 0px;
+    header .container .media {
         text-align: right;
+        margin: 0px;
         padding-right: 20px;
     }
+    .fab {
+        margin: auto 14px;
+    }
+    .menu .container {
+        display: grid;
+        grid-template: repeat(2, min-content) / 1fr;
+    }
+    .menu {
+        padding: 0px;
+    }
+    .logo {
+        margin: 0px;
+        padding: 21px 15px 0px 15px;
+        text-align: left;
+    }
+    .visible_mobile {
+        display: none;
+    }
+    .dropdown_menu {
+        display: grid;
+        grid-template: 50px / repeat(9, minmax(min-content, 1fr));
+        padding: 0px 20px;
+        margin: 0px;
+    }
+    .dropdown_menu li {
+        padding: 17px 14px;
+        border-bottom: none;
+        background-color: white;
+    }
     .top {
+        padding: 0px 20px;
         height: 352px;
     }
     .top h1 {
@@ -276,7 +345,7 @@ h3 {
     .features .container div {
         margin: 0px;
     }
-    .hover div {
+    .feature div {
         margin: 0px 10px;
     }
     .fa, .far {
@@ -287,60 +356,7 @@ h3 {
         margin-bottom: 20px;
     }
 }
-@media screen and (max-width:980px) {
-    .visible_menu {
-        display: grid;
-        grid-template: 40px / minmax(min-content, 1fr) min-content;
-        margin: 0px 20px;
-        padding-top: 20px;
-        padding-bottom: 10px;
-        font-size: 13px;
-        color: rgb(57, 57, 57);
-        position: relative;
-    }
-    .menu_left {
-        border: 1px solid rgb(218, 218, 218);
-        text-align: left;
-        padding: 10px 20px;
-    }
-    .menu_right {
-        border: 1px solid rgb(218, 218, 218);
-        text-align: left;
-        padding: 12px 18px;
-    }
-    .fa-bars {
-        color: rgb(197, 197, 197);
-        transform: scale(1.8);
-    }
-    .visible_menu:hover .hidden_menu {
-        display: block;
-        z-index: 1;
-    }
-    .visible_menu:hover {
-        margin-bottom: 350px;
-    }
-    .hidden_menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: -40px;
-        width: 100%;
-        margin: 0px 0px;
-    }
-}
-@media screen and (min-width:981px) {
-    header .container{
-        grid-template: 40px / 72% 28%;
-    }
-    .email {
-        text-align: left;
-        padding-left: 20px;
-    }
-    .media {
-        margin: 0px;
-        text-align: right;
-        padding-right: 20px;
-    }
+@media screen and (min-width:1000px) {
     .menu .container {
         display: grid;
         grid-template: max-content / minmax(max-content, 1fr) minmax(max-content, 1fr);
@@ -351,48 +367,31 @@ h3 {
     }
     .logo {
         margin: 0px;
-        padding: 23px 20px;
+        padding: 21px 0px 21px 15px;
         text-align: left;
     }
-    .visible {
+    .visible_mobile {
         display: none;
     }
-    .hidden_menu {
+    .dropdown_menu {
         display: grid;
-        grid-template: 100px / repeat(9, minmax(min-content, max-content)) ;
-        padding: 0px;
+        grid-template: 100px / repeat(9, minmax(min-content, max-content));
+        padding: 0px 20px;
         margin: 0px;
     }
-    .hidden_menu li {
-        float: left;
-        padding: 44px 10px;
-        text-align: center;
+    .dropdown_menu li {
+        padding: 43px 10px;
         border-bottom: none;
         background-color: white;
-    }
-    .top {
-        padding: 0px 20px;
     }
 }
 @media screen and (min-width:1170px) {
     header {
-        background: linear-gradient(to right, rgb(242, 242, 242), rgb(242, 242, 242) 70%, rgb(0, 158, 231) 70%, rgb(0, 158, 231))
+        background: linear-gradient(to right, rgb(242, 242, 242), rgb(242, 242, 242) 72%, rgb(0, 158, 231) 72%, rgb(0, 158, 231))
     }
-    header .container{
-        grid-template: 40px / 75% 25%;
+    header .container {
+        background: inherit;
     }
-    .email {
-        text-align: left;
-        padding-left: 25px;
-    }
-    .media {
-        margin: 0px;
-        text-align: right;
-        padding-right: 20px;
-    }
-    /* .menu {
-        padding-top: 0px;
-    } */
     .top {
         height: 511px;
     }
