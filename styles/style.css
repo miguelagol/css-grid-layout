@@ -3,7 +3,7 @@ html, body {
     min-width: 385px;
     margin: 0px;
     padding: 0px;
-    font-size: 14px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif;
     color: rgb(57, 57, 57);
 }
@@ -39,7 +39,7 @@ header .container div {
 li {
     list-style: none;
 }
-.current, .dropdown_menu li:hover, .fa, .far, .feature:hover h3 {
+.current, .dropdown_mobile li:hover, .fa, .far, .feature:hover h3 {
     color: rgb(0, 158, 231);
     cursor: pointer;
 }
@@ -78,29 +78,32 @@ h2 {
     font-weight: 400;
 }
 .button {
-    margin: 22px 0px;
-    padding: 11px;
-    width: 110px;
     text-align: center;
-    color: rgb(0, 158, 231);
-    background-color: white;
     border-radius: 25px;
+}
+.top_button {
+    padding: 11px;
+    margin: 22px 0px;
+    width: 110px;
+    font-size: 14px;
+    color: rgb(2, 176, 255);
+    background-color: white;
 }
 .features .container {
     display: grid;
     grid-template: repeat(4, max-content) / 1fr;
 }
 .features {
-    margin: 85px 20px;
+    margin: 85px 20px 20px;
 }
 .features .container div {
-    margin: 0px 20px 50px 20px;
+    margin-bottom: 30px;
 }
 .fa, .far {
     border: 1px solid rgb(0, 158, 231);
     padding: 13px;
     transform: scale(1.8);
-    border-radius: 28.8px;
+    border-radius: 21px;
     margin-bottom: 20px;
 }
 h3 {
@@ -119,6 +122,7 @@ h3 {
 .latest_themes {
     padding: 15px 0px;
     background-color: rgb(242, 242, 242);
+    color: black;
 }
 .latest_themes h1 {
     font-size: 28px;
@@ -133,22 +137,22 @@ h3 {
 .theme_container {
     padding: 0px 20px 0px 10px;
     position: relative;
-    font-size: 19px;
+    font-size: 20px;
 }
 .price {
     height: 20px;
     width: 70px;
+    font-size: 15px;
     padding: 10px;
     background-color: rgb(2, 176, 255);
-    font-size: 15px;
     position: absolute;
-    top: 175px;
+    top: 185px;
     right: 10px;
     color: white;
     z-index: 2;
 }
 .theme {
-    height: 280px;
+    height: 290px;
     overflow: hidden;
     border: 11px solid white;
     border-radius: 6px;
@@ -162,20 +166,16 @@ h3 {
     height: 40px;
     width: 10px;
     position: absolute;
-    top: 184px;
+    top: 194px;
     right: 10px;
     transform: skewY(-60deg);
 }
-.testing {
-    height: 300px;
-    width: 300px;
-    background: red;
-}
-.testing_box {
-    height: 200px;
-    width: 200px;
-    padding: 50px;
-    background: red;
+.themes_button {
+    width: 160px;
+    background-color: rgb(2, 176, 255);
+    color: white;
+    margin: 90px auto;
+    padding: 14px;
 }
 @media screen and (max-width: 478px) {
     .logo img{
@@ -183,48 +183,25 @@ h3 {
     }
 }
 @media screen and (min-width: 550px) {
-    .latest_themes {
-        width: 100%;
-        padding: 15px 0px;
-        background-color: rgb(242, 242, 242);
-    }
     .themes {
-        display: grid;
-        grid-template: 600px / repeat(3, minmax(33%, min-content));
+        grid-template: max-content / repeat(3, minmax(33%, min-content));
     }
     .theme_container {
         padding: 10px;
-        position: relative;
     }
     .price {
-        height: 20px;
-        width: 70px;
-        padding: 10px;
-        background-color: rgb(2, 176, 255);
-        font-size: 15px;
-        position: absolute;
-        top: 165px;
+        top: 205px;
         right: 0px;
-        color: white;
-        z-index: 2;
     }
     .theme {
-        height: 280px;
-        overflow: hidden;
         border: 9px solid white;
-        border-radius: 6px;
-    }
-    .themes_img {
-        width: 100%;
     }
     .back {
-        background-color: rgb(1, 131, 190);
-        height: 40px;
-        width: 10px;
-        position: absolute;
-        top: 174px;
+        top: 214px;
         right: 0px;
-        transform: skewY(-60deg);
+    }
+    .themes_button {
+        margin: 60px auto;
     }
 }
 @media screen and (max-width:767px) {
@@ -252,14 +229,14 @@ h3 {
         color: rgb(197, 197, 197);
         transform: scale(1.8);
     }
-    .main_menu:hover .dropdown_menu {
+    .main_menu:hover .dropdown_mobile {
         display: block;
         z-index: 1;
     }
     .main_menu:hover {
-        margin-bottom: 350px;
+        margin-bottom: 335px;
     }
-    .dropdown_menu {
+    .dropdown_mobile {
         display: none;
         position: absolute;
         top: 60px;
@@ -267,8 +244,7 @@ h3 {
         width: 100%;
         margin: 0px 0px;
     }
-    .dropdown_menu li {
-        list-style: none;
+    .dropdown_mobile li {
         text-align: left;
         padding: 10px;
         border-bottom: 1px solid rgb(197, 197, 197);
@@ -306,19 +282,18 @@ h3 {
     .visible_mobile {
         display: none;
     }
-    .dropdown_menu {
+    .dropdown_mobile {
         display: grid;
         grid-template: 50px / repeat(9, minmax(min-content, 1fr));
         padding: 0px 20px;
         margin: 0px;
     }
-    .dropdown_menu li {
+    .dropdown_mobile li {
         padding: 17px 14px;
         border-bottom: none;
         background-color: white;
     }
     .top {
-        padding: 0px 20px;
         height: 352px;
     }
     .top h1 {
@@ -329,14 +304,11 @@ h3 {
     h2 {
         font-size: 19px;
     }
-    .button {
+    .top_button {
         margin: 30px 0px;
         padding: 11px 15px;
-        width: 110px;
-        font-size: 15px;
     }
     .features .container {
-        display: grid;
         grid-template: max-content / repeat(4, 1fr);
     }
     .features {
@@ -344,45 +316,30 @@ h3 {
     }
     .features .container div {
         margin: 0px;
+        padding: 0px 8px;
     }
     .feature div {
         margin: 0px 10px;
     }
-    .fa, .far {
-        border: 1px solid rgb(0, 158, 231);
-        padding: 13px;
-        transform: scale(1.8);
-        border-radius: 28.8px;
-        margin-bottom: 20px;
+    .price {
+        top: 180px;
+    }
+    .theme {
+        height: 260px;
+    }
+    .back {
+        top: 189px;
     }
 }
 @media screen and (min-width:1000px) {
     .menu .container {
-        display: grid;
-        grid-template: max-content / minmax(max-content, 1fr) minmax(max-content, 1fr);
+        grid-template: max-content / repeat(2, minmax(max-content, 1fr));
     }
-    .menu {
-        margin: 0px;
-        padding-top: 0px;
-    }
-    .logo {
-        margin: 0px;
-        padding: 21px 0px 21px 15px;
-        text-align: left;
-    }
-    .visible_mobile {
-        display: none;
-    }
-    .dropdown_menu {
-        display: grid;
+    .dropdown_mobile {
         grid-template: 100px / repeat(9, minmax(min-content, max-content));
-        padding: 0px 20px;
-        margin: 0px;
     }
-    .dropdown_menu li {
+    .dropdown_mobile li {
         padding: 43px 10px;
-        border-bottom: none;
-        background-color: white;
     }
 }
 @media screen and (min-width:1170px) {
@@ -399,13 +356,12 @@ h3 {
         padding: 134px 0px 25px;
         font-size: 40px;
         line-height: 48px;
-        width: 59%;
     }
     h2 {
         font-size: 21px;
         margin-top: 27px;
     }
-    .button {
+    .top_button {
         margin: 43px 0px;
         padding: 16px 20px;
         border-radius: 23px;
