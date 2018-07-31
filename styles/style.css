@@ -39,7 +39,9 @@ header .container div {
 li {
     list-style: none;
 }
-.current, .dropdown_mobile li:hover, .fa, .far, .feature:hover h3 {
+.hover_blue:hover, .current, .dropdown_mobile li:hover,
+.feature_short:hover h3, .feature_long:hover i, .feature_long:hover h3, 
+.foot a:hover {
     color: rgb(0, 158, 231);
     cursor: pointer;
 }
@@ -80,8 +82,9 @@ h2 {
 .button {
     text-align: center;
     border-radius: 25px;
+    cursor: pointer;
 }
-.top_button {
+.white_button {
     padding: 11px;
     margin: 22px 0px;
     width: 110px;
@@ -89,18 +92,22 @@ h2 {
     color: rgb(2, 176, 255);
     background-color: white;
 }
-.features .container {
+.top .white_button {
+    border-radius: 20px;
+}
+.features_short .container {
     display: grid;
     grid-template: repeat(4, max-content) / 1fr;
 }
-.features {
+.features_short {
     margin: 85px 20px 20px;
 }
-.features .container div {
+.features_short .container div {
     margin-bottom: 30px;
 }
-.fa, .far {
+.feature_short i {
     border: 1px solid rgb(0, 158, 231);
+    color: rgb(0, 158, 231);
     padding: 13px;
     transform: scale(1.8);
     border-radius: 21px;
@@ -111,11 +118,11 @@ h3 {
     font-weight: 400;
     margin: 20px auto;
 }
-.feature div {
+.feature_short div {
     line-height: 24px;
     margin: 0px;
 }
-.features .container div:hover .fa, .features .container div:hover .far {
+.features_short .container div:hover .fa, .features_short .container div:hover .far {
     background-color: rgb(0, 158, 231);
     color: white;
 }
@@ -124,7 +131,7 @@ h3 {
     background-color: rgb(242, 242, 242);
     color: black;
 }
-.latest_themes h1 {
+.latest_themes h1, .clients_say h1 {
     font-size: 28px;
     font-weight: 400;
     padding: 40px 0px 0px 0px;
@@ -157,25 +164,203 @@ h3 {
     border: 11px solid white;
     border-radius: 6px;
     margin: 30px 0px;
+    background-color: rgb(2, 176, 255);
 }
 .themes_img {
     width: 100%;
+}
+.themes_img:hover {
+    opacity: 0.4;
 }
 .back {
     background-color: rgb(1, 131, 190);
     height: 40px;
     width: 10px;
     position: absolute;
-    top: 194px;
+    top: 195px;
     right: 10px;
     transform: skewY(-60deg);
 }
-.themes_button {
+.blue_button {
     width: 160px;
     background-color: rgb(2, 176, 255);
     color: white;
     margin: 90px auto;
     padding: 14px;
+}
+.blue_button:hover, .themes_bundle .white_button:hover {
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+.themes_bundle {
+    background: url(../images/themes-banner.jpg) no-repeat center bottom;
+    color: white;
+    height: 355px;
+}
+.themes_bundle h1 {
+    font-size: 25px;
+    line-height: 30px;
+    margin: 0px;
+    padding: 60px 30px 10px;
+}
+.themes_bundle h2 {
+    padding: 0px 30px;
+    font-size: 19px;
+}
+.themes_bundle .white_button {
+    margin: 30px auto;
+    width: 130px;
+}
+.features .container, .about .container {
+    display: grid;
+    grid-template: repeat(2, max-content) / 100%;
+    margin: 60px auto;
+}
+.features .container > div {
+    margin: 0px 20px;
+    font-size: 14px;
+}
+.theme_features h2, .about_us h2 {
+    margin: 0px 0px 20px 0px;
+    font-size: 26px;
+}
+.theme_features div, .about_us div {
+    padding: 12px 0px;
+    line-height: 24px;
+}
+.theme_features .button, .about_us .button {
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.features_long {
+    display: grid;
+    grid-template: repeat(4, max-content) / 1fr;
+    background-color: rgb(242, 242, 242);
+    border-radius: 10px;
+    padding-top: 40px;
+}
+.features_long i {
+    transform: scale(2);
+}
+.feature_long h3 {
+    font-size: 17px;
+    color: black;
+    margin-bottom: 10px;
+}
+.text {
+    padding: 0px 30px 35px 30px;
+    line-height: 25px;
+}
+.clients_say {
+    background: url(../images/people-background.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+.clients {
+    display: grid;
+    grid-template: repeat(3, max-content) / 100%;
+    margin: 30px 10%;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.clients div {
+    padding: 10px;
+}
+.client_img {
+    clip-path: circle(50% at 50% 50%);
+    margin: 10px auto;
+}
+.client_name {
+    color: rgb(0, 158, 231);
+}
+.about .container { 
+    margin: 30px auto;
+}
+.about .container > div {
+    margin: 20px;
+    font-size: 14px;
+}
+.about img {
+    width: 100%;
+    max-width: 450px;
+}
+.footer_top {
+    background-color: rgb(19, 19, 19);
+}
+.footer_top .container {
+    display: grid;
+    grid-template: repeat(4, max-content) / 1fr;
+    color: white;
+    padding: 20px 20px 40px 20px;
+}
+.foot {
+    padding-bottom: 20px;
+    font-size: 14px;
+    text-align: left;
+}
+.foot h2 {
+    font-size: 22px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(42, 42, 42);
+}
+.foot ul {
+    padding: 0px;
+}
+.foot li {
+    padding: 8px;
+}
+.post {
+    display: grid;
+    grid-template: repeat(2, max-content) / 70px 1fr;
+    padding: 10px 0px;
+    line-height: 24px;
+}
+.post:not(:last-child) {
+    border-bottom: 1px dashed rgb(42, 42, 42);
+}
+.post img {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+.foot .email {
+    padding: 10px 0px;
+}
+.foot i {
+    margin-right: 10px;
+}
+.foot .media {
+    background-color: rgb(19, 19, 19);
+    padding: 20px 0px;
+    margin: 0px;
+}
+.foot .media i {
+    width: 17px;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 17px;
+    text-align: center;
+    margin: 0px 3px;
+}
+.foot .media i:hover {
+    border-color: rgb(0, 158, 231);
+}
+.footer_bottom {
+    background-color: rgb(8, 8, 8);
+}
+.footer_bottom .container {
+    display: grid;
+    grid-template: repeat(2, 24px) / 1fr;
+    color: white;
+    padding: 15px 0px;
+    font-size: 14px;
+}
+.footer_bottom .container div {
+    margin: auto;
 }
 @media screen and (max-width: 478px) {
     .logo img{
@@ -187,20 +372,20 @@ h3 {
         grid-template: max-content / repeat(3, minmax(33%, min-content));
     }
     .theme_container {
-        padding: 10px;
+        padding: 8px;
     }
     .price {
         top: 205px;
-        right: 0px;
+        right: -2px;
     }
     .theme {
         border: 9px solid white;
     }
     .back {
-        top: 214px;
-        right: 0px;
+        top: 215px;
+        right: -2px;
     }
-    .themes_button {
+    .blue_button {
         margin: 60px auto;
     }
 }
@@ -265,7 +450,7 @@ h3 {
         padding-right: 20px;
     }
     .fab {
-        margin: auto 14px;
+        margin: auto 15px;
     }
     .menu .container {
         display: grid;
@@ -276,7 +461,7 @@ h3 {
     }
     .logo {
         margin: 0px;
-        padding: 21px 15px 0px 15px;
+        padding: 20px 5px 0px 15px;
         text-align: left;
     }
     .visible_mobile {
@@ -285,7 +470,7 @@ h3 {
     .dropdown_mobile {
         display: grid;
         grid-template: 50px / repeat(9, minmax(min-content, 1fr));
-        padding: 0px 20px;
+        padding: 0px 14px 0px 5px;
         margin: 0px;
     }
     .dropdown_mobile li {
@@ -304,31 +489,134 @@ h3 {
     h2 {
         font-size: 19px;
     }
-    .top_button {
+    .white_button {
         margin: 30px 0px;
         padding: 11px 15px;
     }
-    .features .container {
+    .features_short .container {
         grid-template: max-content / repeat(4, 1fr);
     }
-    .features {
+    .features_short {
         margin: 85px 20px 65px 20px;
     }
-    .features .container div {
+    .features_short .container div {
         margin: 0px;
         padding: 0px 8px;
     }
-    .feature div {
+    .feature_short div {
         margin: 0px 10px;
+    }
+    .theme_container {
+        padding: 15px;
+    }
+    .latest_themes h1, .clients_say h1 {
+        font-size: 34px;
     }
     .price {
         top: 180px;
+        right: 5px;
     }
     .theme {
         height: 260px;
     }
     .back {
-        top: 189px;
+        top: 190px;
+        right: 5px;
+    }
+    .themes_bundle h1 {
+        font-size: 30px;
+        /* padding: 60px 40px 0px; */
+    }
+    .themes_bundle h2 {
+        font-size: 20px;
+    }
+    .themes_bundle .white_button {
+        margin: 45px auto;
+        padding: 15px;
+        width: 140px;
+    }
+    .theme_features, .about_us {
+        text-align: left;
+    }
+    .theme_features .button, .about_us .button {
+        margin: 20px 0px;
+    }
+    .features .container {
+        grid-template: max-content / 47% 53%;
+    }
+    .features_long {
+        padding: 0px 0px 25px 0px;
+    }
+    .feature_long {
+        display: grid;
+        grid-template: repeat(2, max-content) / 17% 83%;
+        grid-template-areas:
+        "icon header3"
+        "icon text";
+        padding-top: 10px;
+    }
+    .feature_long i {
+        transform: scale(2.3);
+    }
+    .icon {
+        grid-area: icon;
+        text-align: right;
+        margin: 30px 30% 0px 0px;
+    }
+    .header3 {
+        grid-area: header3;
+        text-align: left;
+    }
+    .text {
+        grid-area: text;
+        text-align: left;
+        padding: 0px 40px 0px 0px;
+    }
+    .clients {
+        grid-template: repeat(2, max-content) / 150px 1fr;
+        grid-template-areas:
+        "image opinion"
+        "name opinion";
+    }
+    .client_img {
+        grid-area: image;
+    }
+    .opinion {
+        grid-area: opinion;
+        text-align: left;
+    }
+    .client_name {
+        grid-area: name;
+    }
+    .about .container {
+        grid-template: max-content / 40% 60%;
+        padding: 0px 25px;
+    }
+    .about .container > div {
+        margin: 20px 2%;
+    }
+    .footer_top .container {
+        grid-template: min-content / repeat(2, minmax(max-content, 1fr)) 1.5fr 1fr;
+    }
+    .foot {
+        padding: 10px 10%;
+    }
+    .foot .email {
+        padding: 10px 0px;
+    }
+    .foot .media i {
+        margin: 5px 3px;
+    }
+    .footer_bottom .container {
+        grid-template: max-content / repeat(2, 1fr);
+    }
+    .footer_bottom .container .copy {
+        text-align: left;
+        margin: 5px 20px;
+    }
+    .footer_bottom .container .design {
+        text-align: right;
+        margin: 5px 20px;
     }
 }
 @media screen and (min-width:1000px) {
@@ -337,9 +625,10 @@ h3 {
     }
     .dropdown_mobile {
         grid-template: 100px / repeat(9, minmax(min-content, max-content));
+        padding: 0px 20px 0px 5px;
     }
     .dropdown_mobile li {
-        padding: 43px 10px;
+        padding: 43px 9px;
     }
 }
 @media screen and (min-width:1170px) {
@@ -361,10 +650,34 @@ h3 {
         font-size: 21px;
         margin-top: 27px;
     }
-    .top_button {
+    .white_button {
         margin: 43px 0px;
-        padding: 16px 20px;
-        border-radius: 23px;
+        padding: 15px 20px;
         width: 120px;
+        font-size: 15px;
+    }
+    .theme_container {
+        padding: 20px;
+    }
+    .theme {
+        height: 380px;
+    }
+    .price {
+        top: 235px;
+        right: 10px;
+    }
+    .back {
+        top: 245px;
+        right: 10px;
+    }
+    .themes_bundle {
+        height: 450px;
+    }
+    .themes_bundle h1 {
+        font-size: 40px;
+        padding: 70px 40px 0px;
+    }
+    .themes_bundle .white_button {
+        margin: 70px auto;
     }
 }
